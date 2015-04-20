@@ -1,4 +1,4 @@
-import urllib.request
+ import urllib.request
 from html.parser import HTMLParser
 class page(HTMLParser):
     def handle_starttag(self, tag, attrs):
