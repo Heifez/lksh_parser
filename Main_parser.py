@@ -29,8 +29,9 @@ def get_num_of_imgs(url, urls, max_images):
     else:
         urls[f] += [url]
     for i in parsing_item.hrefs:
-        if i not in urls:
-            urls, max_images = get_num_of_imgs(i, urls, max_images)
+        for j in urls:
+            if i not in j:
+                urls, max_images = get_num_of_imgs(j, urls, max_images)
     return urls, max_images
 
 def work():
